@@ -1,0 +1,5 @@
+fecha	num.trees	max.depth	min.node_size	mtry	xval_folds	ganancia	iteracion				
+20220606 110924	500	NULL	NULL	NULL	5	 9.407.000,00 	1				
+											
+											
+											
