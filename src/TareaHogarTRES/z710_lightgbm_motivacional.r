@@ -67,8 +67,8 @@ dataset[ foto_mes >= 202001 & foto_mes<=202011 & foto_mes != 202006,
 #--------------------------------------
 #creo las carpetas donde van los resultados
 dir.create( "./exp/",  showWarnings = FALSE ) 
-dir.create( "./exp/KA7100/", showWarnings = FALSE )
-setwd( "./exp/KA7100/" )
+dir.create( "./exp/KA7100/S703411", showWarnings = FALSE )
+setwd( "./exp/KA7100/S703411" )
 
 
 #dejo los datos en el formato que necesita LightGBM
