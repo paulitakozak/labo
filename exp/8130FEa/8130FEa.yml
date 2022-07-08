@@ -7,7 +7,7 @@ googlecloud:
 
 
 experiment:
-  script: "src/completo/z912_1_FE_UTN.r"
+  script: "src/completo/912_1_FE_UTN.r"
   restart: FALSE
   name: "exp"
   type: "FeatureEngineering"
