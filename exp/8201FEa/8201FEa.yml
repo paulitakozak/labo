@@ -1,4 +1,4 @@
-# lag1, delta1, tendencia6, promedio6, canaritos 0.3, rankeador FALSE
+# lag1, delta1, tendencia6, promedio6, canaritos 0.3, rankeador TRUE
 
 googlecloud:
   RAM:   128
@@ -57,7 +57,7 @@ param:
 
   tony:  FALSE
 
-  rankeador: FALSE
+  rankeador: TRUE
 
   canaritos_final: 0.3   #si es CERO entonces no hace el filtrado final por canaritos
 
