@@ -57,7 +57,7 @@ param:
     periodos: [ ]
     rango:
       desde:  202003
-      hasta:  202011
+      hasta:  202012
     excluir: [ 202006 , 202005 ]
     undersampling: [  ]
     

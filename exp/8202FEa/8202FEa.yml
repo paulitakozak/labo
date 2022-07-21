@@ -1,9 +1,9 @@
 # lag1, delta1, tendencia6y12, promedio6y12, canaritos 0.3, elimino vbles drifts, rankeador FALSE
 
 googlecloud:
-  RAM:   128
+  RAM:   256
   vCPU:    8
-  disk:  256
+  disk:  300
 
 
 experiment:
