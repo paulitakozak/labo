@@ -31,7 +31,7 @@ param:
     rango:
       desde:  202003
       hasta:  202009
-    excluir: [ 202006 , 202005 ]
+    excluir: [ 202006 , 202005,202004 ]
     undersampling: [ ]  #ATENCION  sin undersampling
 
   #donde valido
@@ -58,7 +58,7 @@ param:
     rango:
       desde:  202003
       hasta:  202011
-    excluir: [ 202006 , 202005 ]
+    excluir: [ 202006 , 202005 , 202004 ]
     undersampling: [  ]
     
 
