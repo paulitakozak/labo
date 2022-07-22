@@ -29,18 +29,18 @@ param:
 
 #crea variables {0,1}  con las hojas de un random forest, ATENCION que explota !!
   randomforest:    
-    correr:        TRUE
+    correr:        FALSE
     num.trees:        50
     max.depth:         8
     min.node.size:   500
-    mtry:             19
+    mtry:             17
 
   #lags y sus deltas
   lags: 
     correr:    [  TRUE,  FALSE, FALSE, FALSE, FALSE, FALSE ]  #si se corre el lag
     lag:       [     1,      2,     3,     4,     5,     6 ]  #orden del lag
     delta:     [  TRUE,  FALSE, FALSE, FALSE, FALSE, FALSE ]  #solo se activa si correr=TRUE 
-    canaritos: [   0.3,    0.3,   0.3,   0.3,   0.3,   0.3 ]  #porcentaje de canaritos asesinos, del total de columnas del dataset, 0 indica NO reducir campos por canaritos
+    canaritos: [   0.25,    0.25,   0.25,   0.25,   0.25,   0.25 ]  #porcentaje de canaritos asesinos, del total de columnas del dataset, 0 indica NO reducir campos por canaritos
 
 
   tendenciaYmuchomas:  
@@ -50,16 +50,16 @@ param:
     minimo:    [ TRUE,  FALSE, FALSE, FALSE ]   #minimo de la ventana
     maximo:    [ TRUE, FALSE, FALSE, FALSE ]   #maximo de la ventana
     promedio:  [  TRUE, FALSE,  FALSE, FALSE ]   #promedio de la ventana
-    ratioavg:  [ TRUE, FALSE, FALSE, FALSE ]   #valor sobre el promedio de la ventana
-    ratiomax:  [ TRUE, FALSE, FALSE, FALSE ]   #valor sobre el maximo de la ventana
-    canaritos: [   0.3,   0.3,   0.3,   0.3 ]   #porcentaje de canaritos asesinos, del total de columnas del dataset, 0 indica NO reducir campos por canaritos
+    ratioavg:  [ FALSE, FALSE, FALSE, FALSE ]   #valor sobre el promedio de la ventana
+    ratiomax:  [ FALSE, FALSE, FALSE, FALSE ]   #valor sobre el maximo de la ventana
+    canaritos: [   0.25,   0.25,   0.25,   0.25 ]   #porcentaje de canaritos asesinos, del total de columnas del dataset, 0 indica NO reducir campos por canaritos
 
 
   tony:  FALSE
 
-  rankeador: TRUE
+  rankeador: FALSE
 
-  canaritos_final: 0.3   #si es CERO entonces no hace el filtrado final por canaritos
+  canaritos_final: 0.25   #si es CERO entonces no hace el filtrado final por canaritos
 
   files:
     input:
