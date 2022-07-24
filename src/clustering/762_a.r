@@ -46,7 +46,7 @@ dataset  <- na.roughfix( dataset )
 campos_buenos  <- c( "ctrx_quarter", "mdescubierto_preacordado","mcuentas_saldo", "cliente_antiguedad",
                      "cpayroll_trx", "cproductos", "mtarjeta_visa_consumo", "ctarjeta_visa_trx","mpasivos_margen",
                      "mactivos_margen","mprestamos_personales","chomebanking_trx","ccuenta_debitos_automaticos",
-                     "ccajeros_propios_descuentos", "Visa_msaldototal")
+                     "ccajeros_propios_descuentos", "Visa_msaldototal","mrentabilidad_annual")
 
 
 #Ahora, a esperar mucho con este algoritmo del pasado que NO correr en paralelo, patetico
