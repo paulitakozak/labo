@@ -23,7 +23,7 @@ setwd( "~/buckets/b1/" )  #cambiar por la carpeta local
 dataset_grande  <- fread( "./datasets/paquete_premium.csv.gz", stringsAsFactors= TRUE)
 
 #me quedo SOLO con los BAJA+2
-dataset  <- copy( dataset_grande[  clase_ternaria =="BAJA+2"  & foto_mes>=202001  & foto_mes<=202011, ] )
+dataset  <- copy( dataset_grande[  clase_ternaria =="BAJA+2"  & foto_mes>=201911  & foto_mes<=202011, ] )
 
 #armo el dataset de los 12 meses antes de la muerte de los registros que analizo
 dataset12  <- copy( dataset_grande[  numero_de_cliente %in%  dataset[ , unique(numero_de_cliente)]  ]  )
