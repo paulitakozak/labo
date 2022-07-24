@@ -43,16 +43,10 @@ dataset  <- na.roughfix( dataset )
 
 #los campos que arbitrariamente decido considerar para el clustering
 #por supuesto, se pueden cambiar
-campos_buenos  <- c( "ctrx_quarter", "cpayroll_trx", "mcaja_ahorro", "mtarjeta_visa_consumo", "ctarjeta_visa_trx",
-                     "mcuentas_saldo", "mrentabilidad_annual", "mprestamos_personales", "mactivos_margen", "mpayroll",
-                     "Visa_mpagominimo", "Master_fechaalta", "cliente_edad", "chomebanking_trx", "Visa_msaldopesos",
-                     "Visa_Fvencimiento", "mrentabilidad", "Visa_msaldototal", "Master_Fvencimiento", "mcuenta_corriente",
-                     "Visa_mpagospesos", "Visa_fechaalta", "mcomisiones_mantenimiento", "Visa_mfinanciacion_limite",
-                     "mtransferencias_recibidas", "cliente_antiguedad", "Visa_mconsumospesos", "Master_mfinanciacion_limite",
-                     "mcaja_ahorro_dolares", "cproductos", "mcomisiones_otras", "thomebanking", "mcuenta_debitos_automaticos",
-                     "mcomisiones", "Visa_cconsumos", "ccomisiones_otras", "Master_status", "mtransferencias_emitidas",
-                     "mpagomiscuentas")
-
+campos_buenos  <- c( "ctrx_quarter", "mdescubierto_preacordado","mcuentas_saldo", "cliente_antiguedad",
+                     "cpayroll_trx", "cproductos", "mtarjeta_visa_consumo", "ctarjeta_visa_trx","mpasivos_margen",
+                     "mactivos_margen","mprestamos_personales","chomebanking_trx","ccuenta_debitos_automaticos",
+                     "ccajeros_propios_descuentos", "Visa_msaldototal")
 
 
 #Ahora, a esperar mucho con este algoritmo del pasado que NO correr en paralelo, patetico
@@ -70,21 +64,21 @@ hclust.rf  <- hclust( as.dist ( 1.0 - modelo$proximity),  #distancia = 1.0 - pro
 
 #primero, creo la carpeta donde van los resultados
 dir.create( "./exp/", showWarnings= FALSE )
-dir.create( "./exp/ST7620", showWarnings= FALSE )
-setwd( "~/buckets/b1/exp/ST7620" )
+dir.create( "./exp/ST7620_a", showWarnings= FALSE )
+setwd( "~/buckets/b1/exp/ST7620_a" )
 
 
 #imprimo un pdf con la forma del cluster jerarquico
-pdf( "cluster_jerarquico.pdf" )
+pdf( "cluster_jerarquico_762_a.pdf" )
 plot( hclust.rf )
 dev.off()
 
 
-#genero 7 clusters
+#genero 4 clusters
 h <- 20
 distintos <- 0
 
-while(  h>0  &  !( distintos >=6 & distintos <=7 ) )
+while(  h>0  &  !( distintos >=3 & distintos <=4 ) )
 {
   h <- h - 1 
   rf.cluster  <- cutree( hclust.rf, h)
@@ -107,7 +101,7 @@ fwrite( dataset,
         sep= "\t" )
 
 
-#ahora a mano veo los centroides de los 7 clusters
+#ahora a mano veo los centroides de los 4 clusters
 #esto hay que hacerlo para cada variable,
 #  y ver cuales son las que mas diferencian a los clusters
 #esta parte conviene hacerla desde la PC local, sobre  cluster_de_bajas.txt
@@ -126,5 +120,5 @@ dataset12[ dataset,
            cluster2 := i.cluster2 ]
 
 fwrite( dataset12, 
-        file= "cluster_de_bajas_12meses.txt",
+        file= "cluster_de_bajas_12meses_762_a.txt",
         sep= "\t" )
